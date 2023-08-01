@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  hello-world:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-08-01T06:20:36.573234336Z"
+    description: A Helm chart for Kubernetes
+    digest: 8b7c8dc943d28289060e6bb4529a04846aa9984d78b90a06d2ff891ebd9b4656
+    name: hello-world
+    type: application
+    urls:
+    - https://github.com/Terraform-Canvas/canvas-helm/releases/download/hello-world-0.1.0/hello-world-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-08-01T06:20:36.573238837Z"
