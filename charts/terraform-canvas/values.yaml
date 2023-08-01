@@ -31,12 +31,12 @@ frontend:
     type: LoadBalancer
     http:
       servicePort: 80
-      targetPort: 3000
+      targetPort: 80
   service:
     type: NodePort
     http:
       servicePort: 80
-      targetPort: 3000
+      targetPort: 80
 
 backend:
   lb:
