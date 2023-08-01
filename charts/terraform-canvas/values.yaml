@@ -8,7 +8,7 @@ replicaCount: 2
 image:
   repository:
     frontend: iad.ocir.io/idklmfs5zwub/terraform_canvas:d3f59a7032f741bb8845d0c7e14d11ebe3959a92
-    backend:  iad.ocir.io/idklmfs5zwub/terraform_canvas:d3f59a7032f741bb8845d0c7e14d11ebe3959a92
+    backend:  iad.ocir.io/idklmfs5zwub/terraform_canvas:3506701d68e58f5f7a20b6bb5c541e9ac015fd7d
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
@@ -25,7 +25,7 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
-  
+
 frontend:
   lb:
     type: LoadBalancer
@@ -37,7 +37,7 @@ frontend:
     http:
       servicePort: 80
       targetPort: 3000
-  
+
 backend:
   lb:
     type: LoadBalancer
