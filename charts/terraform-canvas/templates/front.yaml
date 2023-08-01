@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "terraform-canvas.fullname" . }}-front
+  labels:
+    app: {{ include "terraform-canvas.name" . }}-front
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "terraform-canvas.name" . }}-front
+  template:
+    metadata:
+      labels:
+        app: {{ include "terraform-canvas.name" . }}-front
+    spec:
+      serviceAccountName: {{ include "terraform-canvas.serviceAccountName" . }}
+      containers:
+      - name: {{ .Chart.Name }}-front
+        image: {{ .Values.image.repository.frontend}}
+        ports:
+        - name: http
+          containerPort: {{ .Values.frontend.lb.http.targetPort}}
+          protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "front-service"
+  labels:
+    {{- include "terraform-canvas.labels" . | nindent 4 }}-front
+spec:
+  type: {{ .Values.frontend.service.type }}
+  ports:
+  - name: http
+    port: {{ .Values.frontend.service.http.servicePort }}
+    targetPort: {{ .Values.frontend.service.http.targetPort }}
+    protocol: TCP
+  selector:
+    app: {{ include "terraform-canvas.name" . }}-front

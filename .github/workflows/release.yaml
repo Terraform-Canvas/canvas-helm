@@ -1,0 +1,30 @@
+name: Release Charts
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+#test
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "Eeap"
+          git config user.email "kdg97811@naver.com"
+
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.2.0
+        env:
+          CR_TOKEN: "${{ secrets.TOKEN_GITHUB }}"
+          CR_PAGES_BRANCH: "gh_pages"
