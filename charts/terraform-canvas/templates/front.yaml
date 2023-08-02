@@ -17,17 +17,17 @@ spec:
       serviceAccountName: {{ include "terraform-canvas.serviceAccountName" . }}
       containers:
       - name: {{ .Chart.Name }}-front
-        image: iad.ocir.io/idklmfs5zwub/terraform_canvas:275e5db437c920f876bd4747695495f3f20563b8
+        image: iad.ocir.io/idklmfs5zwub/terraform_canvas:615bdb12091e356ee99fc151ae51daca7ee73144
         ports:
         - name: http
           containerPort: {{ .Values.frontend.lb.http.targetPort}}
           protocol: TCP
         env:
-            - name: base_URL
+            - name: VITE_BASE_URL
               valueFrom:
                 secretKeyRef:
                   name: back-config
-                  key: base_URL
+                  key: VITE_BASE_URL
 
 ---
 apiVersion: v1
