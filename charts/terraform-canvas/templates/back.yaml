@@ -17,7 +17,7 @@ spec:
       serviceAccountName: {{ include "terraform-canvas.serviceAccountName" . }}
       containers:
         - name: {{ .Chart.Name }}-back
-          image: iad.ocir.io/idklmfs5zwub/terraform_canvas:5af0ae1816bc25222ae029d69fc23846d605a6d8
+          image: iad.ocir.io/id09nrqj84t0/terraform_canvas:309d4aae48ef890348121a1f0f3a330ab6bc0ede
           ports:
             - name: http
               containerPort: {{ .Values.backend.lb.http.targetPort}}
@@ -113,7 +113,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: "backend-cluster"
+  name: "back-service"
   labels:
     {{- include "terraform-canvas.labels" . | nindent 4 }}-back
 spec:
