@@ -45,7 +45,7 @@ backend:
       servicePort: 8000
       targetPort: 8000
   service:
-    type: NodePort
+    type: ClusterIP
     http:
       servicePort: 8000
       targetPort: 8000
