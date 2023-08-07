@@ -63,9 +63,5 @@ spec:
   - name: http
     port: {{ .Values.frontend.lb.http.servicePort }}
     targetPort: {{ .Values.frontend.lb.http.targetPort }}
-  # - name: https
-  #   port: {{ .Values.frontend.service.https.servicePort }}
-  #   targetPort: {{ .Values.frontend.service.https.targetPort }}
-  #   protocol: TCP
   selector:
     app: {{ include "terraform-canvas.name" . }}-front
