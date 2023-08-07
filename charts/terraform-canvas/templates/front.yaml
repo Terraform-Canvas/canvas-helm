@@ -47,3 +47,25 @@ spec:
   selector:
     app: {{ include "terraform-canvas.name" . }}-front
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "front-lb"
+  annotations:
+    oci.oraclecloud.com/load-balancer-type: "lb"
+    service.beta.kubernetes.io/oci-load-balancer-backend-protocol: "HTTP"
+  labels:
+    {{- include "terraform-canvas.labels" . | nindent 4 }}-front
+spec:
+  type: {{ .Values.frontend.lb.type }}
+  ports:
+  - name: http
+    port: {{ .Values.frontend.lb.http.servicePort }}
+    targetPort: {{ .Values.frontend.lb.http.targetPort }}
+  # - name: https
+  #   port: {{ .Values.frontend.service.https.servicePort }}
+  #   targetPort: {{ .Values.frontend.service.https.targetPort }}
+  #   protocol: TCP
+  selector:
+    app: {{ include "terraform-canvas.name" . }}-front
