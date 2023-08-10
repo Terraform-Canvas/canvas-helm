@@ -7,32 +7,31 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Terraform-Canvas/canvas-helm">
+  <a href="https://github.com/Terraform-Canvas/back-end">
     <img src="./images/canvas-logo.jpg" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Terraform-Canvas</h3>
 
   <p align="center">
-    Terraform Cloud Infrastructure Provisioning Web Services Project with Visual Programming
+    Visual Programming을 통한 Terraform 클라우드 인프라 프로비저닝 웹 서비스 프로젝트
     <br />
     <a href="https://facerain.notion.site/e393c21c423e46318f1dd21a3a9ed428?v=cf7ba34920154548a7d0303f27c7710b&pvs=4"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Terraform-Canvas/canvas-helm/blob/main/README_kor.md">한국어</a>
+    <a href="https://github.com/Terraform-Canvas/back-end/README_kor.md">한국어</a>
     ·
-    <a href="https://github.com/Terraform-Canvas/canvas-helm/blob/main/README.md">English</a>
+    <a href="https://github.com/Terraform-Canvas/back-end/README.md">English</a>
     <br />
     <br />
-    <a href="https://github.com/Terraform-Canvas/canvas-helm/issues">Report Issues</a>
+    <a href="https://github.com/Terraform-Canvas/back-end/issues">Report Issues</a>
     ·
-    <a href="https://github.com/Terraform-Canvas/canvas-helm/pulls">Pull Requests</a>
+    <a href="https://github.com/Terraform-Canvas/back-end/pulls">Pull Requests</a>
   </p>
 </div>
 
 
 
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -60,7 +59,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## :mag: About The Project
-Many companies are choosing Terraform as an IaC tool for transitioning from existing cloud and on-premise environments to cloud native environments. However, they are suffering a lot due to Terraform's high entry barriers. Therefore, we want to lower the barriers to Terraform's entry through "Terraform Cloud Infrastructure Provisioning Web Service with Visual Programming." This enables start-up and SI teams that want to introduce a new cloud-native environment and TF teams that want to test and prototype the IaC environment quickly.
+많은 기업들이 기존 클라우드 및 온프레미스 환경에서 클라우드 네이티브 환경으로의 전환을 위한 IaC 툴로 Terraform을 선택하고 있다. 하지만 Terraform의 높은 진입 장벽 때문에 많은 어려움을 겪고 있다. 그래서 우리는 “Visual Programming을 통한 Terraform 클라우드 인프라 프로비저닝 웹 서비스”를 통해 Terraform의 기술 진입 장벽을 낮추고자 한다. 이를 통해 새롭게 클라우드 네이티브 환경을 도입하고자 하는 스타트업과 SI 팀 그리고 빠르게 IaC 환경을 테스트 및 프로토타이핑하고자 하는 TF 팀에서 활용할 수 있도록 한다.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,34 +86,31 @@ helm install canvas-helm/terraform-canvas
 ```
 
 ### :pencil2: Configuration
-It needs github token to run release workflow.
+배포 workflow를 실행시키기 위해서는 Gihub Token이 필요해요.
 ```bash
 ## Github Repository settings
 TOKEN_GITHUB=xxx
 ```
 
 ### :triangular_flag_on_post: Release
-You have to follow next steps to release your helm chart
-1. Fix version in `/charts/terraform-canvas/Chart.yaml`
-2. Make Pull Request from release branch to main branch
-3. Merge above Pull Request (Then, the release workflow runs, and it makes release package)
-
-
+release 과정을 위해서는 다음과 같은 절차가 필요해요
+1. `/charts/terraform-canvas/Chart.yaml`의 version을 수정해주세요.
+2. main에서 release branch로의 Pull Request를 생성해주세요.
+3. 해당 Pull Request를 merge 해주세요. (이때 release workflow가 동작하게 되고 배포 패키지가 만들어지게 됩니다.)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTRIBUTING -->
 ## :fire: Contributing
-Please refer to `CONTRIBUTION.txt` for Contribution.
+Contribution을 위해서는 `CONTRIBUTION.txt`를 참고해주세요.
 
-For issues, new functions and requests to modify please follow the following procedure. 🥰
+이슈나 새로운 기능 및 수정에 대한 요청은 다음과 같은 절차를 따라주세요. 🥰
 
-1. Fork the Project
-2. Create a Issue when you have new feature or bug, just not Typo fix
-3. Create your Feature Branch from dev Branch (`git checkout -b feature/Newfeature`)
-4. Commit your Changes (`git commit -m 'feat: add new feature'`)
-5. Push to the Branch (`git push origin feature/Newfeature`)
-6. Open a Pull Request to dev branch with Issues
+1. 프로젝트 fork
+2. 새로운 수정이나, 버그, 기능에 대해 이슈 생성 (오타 수정의 경우 따로 x)
+3. dev branch에서 새로운 branch 생성 (`git checkout -b feature/Newfeature`)
+4. 변경 사항 commit (`git commit -m 'feat: add new feature'`)
+5. 작업한 branch의 내용을 push (`git push origin feature/Newfeature`)
+6. dev branch로의 병합으로 Pull Request를 열고 해당 Issues에 대한 closes keyword 추가
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,7 +118,8 @@ For issues, new functions and requests to modify please follow the following pro
 
 <!-- LICENSE -->
 ## :closed_lock_with_key: License
-Please refer to `LICENSE.txt` for LICENSE.
+
+라이센스 정보는 `LICENSE.txt`를 참고해주세요.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -133,7 +130,7 @@ Please refer to `LICENSE.txt` for LICENSE.
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/Eeap"><img src="https://avatars.githubusercontent.com/u/42088290?v=4" width="100px;" alt=""/><br /><sub><b>Sumin Kim</b></sub></a></td>
+      <td align="center"><a href="https://github.com/Eeap"><img src="https://avatars.githubusercontent.com/u/42088290?v=4" width="100px;" alt=""/><br /><sub><b>김수민</b></sub></a></td>
     </tr>
   </tobdy>
 </table>
@@ -143,18 +140,18 @@ Please refer to `LICENSE.txt` for LICENSE.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Terraform-Canvas/canvas-helm.svg?style=flat
-[contributors-url]: https://github.com/Terraform-Canvas/canvas-helm/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Terraform-Canvas/canvas-helm.svg?style=flat
-[forks-url]: https://github.com/Terraform-Canvas/canvas-helm/network/members
-[stars-shield]: https://img.shields.io/github/stars/Terraform-Canvas/canvas-helm.svg?style=flat
-[stars-url]: https://github.com/Terraform-Canvas/canvas-helm/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Terraform-Canvas/canvas-helm.svg?style=flat
-[issues-url]: https://github.com/Terraform-Canvas/canvas-helm/issues
-[pr-url]: https://github.com/Terraform-Canvas/canvas-helm/pulls
-[pr-shield]: https://img.shields.io/github/issues-pr/Terraform-Canvas/canvas-helm.svg?style=flat
-[license-shield]: https://img.shields.io/github/license/Terraform-Canvas/canvas-helm.svg?style=flat
-[license-url]: https://github.com/Terraform-Canvas/canvas-helm/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Terraform-Canvas/back-end.svg?style=flat
+[contributors-url]: https://github.com/Terraform-Canvas/back-end/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Terraform-Canvas/back-end.svg?style=flat
+[forks-url]: https://github.com/Terraform-Canvas/back-end/network/members
+[stars-shield]: https://img.shields.io/github/stars/Terraform-Canvas/back-end.svg?style=flat
+[stars-url]: https://github.com/Terraform-Canvas/back-end/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Terraform-Canvas/back-end.svg?style=flat
+[issues-url]: https://github.com/Terraform-Canvas/back-end/issues
+[pr-url]: https://github.com/Terraform-Canvas/back-end/pulls
+[pr-shield]: https://img.shields.io/github/issues-pr/Terraform-Canvas/back-end.svg?style=flat
+[license-shield]: https://img.shields.io/github/license/Terraform-Canvas/back-end.svg?style=flat
+[license-url]: https://github.com/Terraform-Canvas/back-end/blob/master/LICENSE.txt
 
 [OCI]: https://img.shields.io/badge/Oracle-F80000?style=flat&logo=oracle&logoColor=black
 [OCI-url]: https://www.oracle.com/kr/cloud/
