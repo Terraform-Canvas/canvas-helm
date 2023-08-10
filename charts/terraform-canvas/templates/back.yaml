@@ -17,7 +17,7 @@ spec:
       serviceAccountName: {{ include "terraform-canvas.serviceAccountName" . }}
       containers:
         - name: {{ .Chart.Name }}-back
-          image: iad.ocir.io/id09nrqj84t0/terraform_canvas:ee02aaf3f6f4e40c83685f102e375789cc6b52e3
+          image: iad.ocir.io/id09nrqj84t0/terraform_canvas:8cb389747f2d493d76675290db8563dfa327a6d2
           ports:
             - name: http
               containerPort: {{ .Values.backend.lb.http.targetPort}}
