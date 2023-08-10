@@ -14,6 +14,16 @@ entries:
   terraforn-canvas:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-08-10T11:18:24.543790117Z"
+    description: A Helm chart for Kubernetes with Accordion
+    digest: 7f653c62eadc8e1ca0abf067467aa42b1392d2952e4302fbc3ad1d85db3a3cce
+    name: terraforn-canvas
+    type: application
+    urls:
+    - https://github.com/Terraform-Canvas/canvas-helm/releases/download/terraforn-canvas-0.1.7/terraforn-canvas-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-08-10T11:08:11.580493289Z"
     description: A Helm chart for Kubernetes with Accordion
     digest: 99ca49a599dcac0f8b807ef31a2701b044f5022d0b4908411c0c7b4eb3f63054
@@ -82,4 +92,4 @@ entries:
     urls:
     - https://github.com/Terraform-Canvas/canvas-helm/releases/download/terraforn-canvas-0.1.0/terraforn-canvas-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-10T11:08:11.580539889Z"
+generated: "2023-08-10T11:18:24.543836618Z"
