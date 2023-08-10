@@ -17,7 +17,7 @@ spec:
       serviceAccountName: {{ include "terraform-canvas.serviceAccountName" . }}
       containers:
       - name: {{ .Chart.Name }}-front
-        image: iad.ocir.io/id09nrqj84t0/terraform_canvas:2c0ed9d706e849a77df7a0ff3f4e21abe10f61d7
+        image: iad.ocir.io/id09nrqj84t0/terraform_canvas:95311727cb5c40edadab251d476dbdf83ff59d32
         ports:
         - name: http
           containerPort: {{ .Values.frontend.lb.http.targetPort}}
@@ -38,22 +38,4 @@ spec:
     protocol: TCP
   selector:
     app: {{ include "terraform-canvas.name" . }}-front
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: "front-lb"
-  namespace: default
-  annotations:
-    oci.oraclecloud.com/load-balancer-type: "lb"
-    service.beta.kubernetes.io/oci-load-balancer-backend-protocol: "HTTP"
-  labels:
-    {{- include "terraform-canvas.labels" . | nindent 4 }}-front
-spec:
-  type: {{ .Values.frontend.lb.type }}
-  ports:
-  - name: http
-    port: {{ .Values.frontend.lb.http.servicePort }}
-    targetPort: {{ .Values.frontend.lb.http.targetPort }}
-  selector:
-    app: {{ include "terraform-canvas.name" . }}-front
+
